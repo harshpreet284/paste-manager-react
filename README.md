@@ -1,192 +1,177 @@
-Here’s a complete rewrite of the `README.md` file for your React + Vite project with Tailwind CSS installation and details about the packages used:
+<div align="center">
+
+# 📌 SnippetVault
+
+**Create, organize, and manage reusable text snippets — instantly.**
+
+[![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react&logoColor=white)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-7.3-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![React Router](https://img.shields.io/badge/React_Router-6.26-CA4245?logo=reactrouter&logoColor=white)](https://reactrouter.com/)
+[![LocalStorage](https://img.shields.io/badge/Storage-localStorage-F7DF1E)]()
+[![Responsive](https://img.shields.io/badge/Responsive-Yes-blue)]()
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+
+</div>
 
 ---
 
-# React + Vite + TailwindCSS Template
+## 🚀 Project Overview
 
-This template provides a minimal setup for building a React application using Vite. It includes Hot Module Replacement (HMR) for fast refresh, Tailwind CSS for utility-first styling, and ESLint for code linting.
+**SnippetVault** is a modern, client-side web application for managing reusable text snippets. It solves a simple but persistent problem — developers and professionals constantly reuse the same blocks of text (code snippets, templates, commands, notes) and need a fast, organized way to store and retrieve them.
 
-## Features
-- **Vite**: Ultra-fast development and build tooling.
-- **React**: Latest version for building modern UI components.
-- **Tailwind CSS**: Utility-first CSS framework for building custom designs without leaving your HTML.
-- **ESLint**: A pluggable linter tool for ensuring code quality.
-- **Redux Toolkit**: State management with slices and reducers.
-- **React Hot Toast**: For elegant notifications in your application.
-- **React Router DOM**: Declarative routing for React.
+Built with **React 18**, **Redux Toolkit**, and **Tailwind CSS**, the app provides full CRUD operations on text pastes with real-time search, clipboard copy, and browser-based persistence via `localStorage`. No backend, no accounts, no setup — just open and start saving.
 
----
-
-## Installation
-
-### Step 1: Create a Vite project
-
-1. Install Vite globally (if not already installed):
-
-   ```bash
-   npm create vite@latest
-   ```
-
-2. When prompted, choose the following:
-   - Project name: `paste`
-   - Framework: `React`
-   - Variant: `JavaScript` or `TypeScript` as per your preference.
-
-3. Navigate into the project directory:
-
-   ```bash
-   cd paste
-   ```
-
-### Step 2: Install Tailwind CSS
-
-To add Tailwind CSS to your Vite + React project, follow these steps:
-
-1. Install Tailwind CSS and its dependencies:
-
-   ```bash
-   npm install -D tailwindcss postcss autoprefixer
-   ```
-
-2. Initialize Tailwind configuration:
-
-   ```bash
-   npx tailwindcss init
-   ```
-
-   This will create a `tailwind.config.js` file in your project.
-
-3. Update the `tailwind.config.js` file with the following content to specify which files Tailwind should scan:
-
-   ```js
-   /** @type {import('tailwindcss').Config} */
-   export default {
-     content: [
-       './index.html',
-       './src/**/*.{js,ts,jsx,tsx}',
-     ],
-     theme: {
-       extend: {},
-     },
-     plugins: [],
-   }
-   ```
-
-4. Add the following lines to your `src/index.css` (or `src/main.css` if you’re using that):
-
-   ```css
-   @tailwind base;
-   @tailwind components;
-   @tailwind utilities;
-   ```
-
-### Step 3: Install Required Packages
-
-Install the project dependencies:
-
-```bash
-npm install
-```
-
-### Step 4: Run the Project
-
-Start the development server with the following command:
-
-```bash
-npm run dev
-```
-
-This command will launch the development server, and your project will be available at `http://localhost:5173`.
+**Key highlights:**
+- Full create, edit, delete, view, search, and copy workflow
+- All data persists locally across browser sessions
+- Centralized state management with Redux Toolkit
+- Clean, responsive UI with macOS-inspired editor aesthetics
+- Deployed on Vercel with SPA routing support
 
 ---
 
-## Scripts
+## 📸 Screenshots
 
-- **`npm run dev`**: Starts the Vite development server with HMR.
-- **`npm run build`**: Builds the project for production.
-- **`npm run preview`**: Serves the production build for preview.
-- **`npm run lint`**: Lints your code using ESLint.
+### Home — Create Paste
 
----
+![Home Page](docs/screenshots/home.png)
 
-## Packages Used
+### Paste Listing — Search & Manage
 
-Here is a list of all the important packages used in this project:
-
-### Dependencies
-- **@reduxjs/toolkit**: A powerful library for managing application state with Redux.
-- **lucide-react**: Icon set for React that provides various UI icons.
-- **react**: The core React library for building user interfaces.
-- **react-dom**: DOM bindings for React.
-- **react-hot-toast**: Notifications system for React.
-- **react-redux**: Official React bindings for Redux.
-- **react-router-dom**: Provides routing functionalities in React apps.
-
-### Dev Dependencies
-- **@eslint/js**: ESLint configurations for JavaScript.
-- **@types/react**: TypeScript type definitions for React (if you are using TypeScript).
-- **@types/react-dom**: TypeScript type definitions for React DOM (if you are using TypeScript).
-- **@vitejs/plugin-react**: Official Vite plugin for React, enabling Fast Refresh using Babel.
-- **autoprefixer**: PostCSS plugin that adds vendor prefixes automatically.
-- **eslint**: A tool for identifying and fixing problems in JavaScript code.
-- **eslint-plugin-react**: ESLint plugin for React-specific linting rules.
-- **eslint-plugin-react-hooks**: Linting rules for React Hooks.
-- **eslint-plugin-react-refresh**: Linting rules for React Fast Refresh.
-- **globals**: Global variables configuration for ESLint.
-- **postcss**: A tool for transforming CSS with JavaScript plugins.
-- **tailwindcss**: Utility-first CSS framework.
-- **vite**: Build tool for fast and optimized web development.
+![Paste Listing](docs/screenshots/paste-listing.png)
 
 ---
 
-## Project Structure
+## ✨ Features
 
-Here is the basic structure of the project:
+| Feature | Description |
+|---------|-------------|
+| ✅ **Create Paste** | Add new snippets with a title and content body, each assigned a unique ID |
+| ✅ **Edit Paste** | Modify existing pastes — the form auto-populates via URL search params |
+| ✅ **Delete Paste** | Remove pastes instantly from the store and localStorage |
+| ✅ **Search** | Real-time title-based filtering with case-insensitive matching |
+| ✅ **Copy to Clipboard** | One-click copy on both the editor and listing pages |
+| ✅ **View Paste** | Open any paste in a dedicated read-only view (new tab) |
+| ✅ **Local Storage** | All data persists across sessions — no backend required |
+| ✅ **Toast Notifications** | Context-aware success/error toasts for every action |
+| ✅ **Date Display** | Human-readable creation dates using `Intl.DateTimeFormat` |
+| ✅ **Responsive UI** | Adapts between desktop and mobile using Tailwind breakpoints |
+| ✅ **SPA Routing** | Client-side navigation with active link highlighting |
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| **Frontend** | React 18.3 | Component-based UI |
+| **Styling** | Tailwind CSS 3.4 | Utility-first CSS |
+| **Routing** | React Router DOM 6.26 | Client-side SPA routing |
+| **State** | Redux Toolkit 2.2 | Centralized state management |
+| **Notifications** | React Hot Toast 2.4 | Toast notifications |
+| **Icons** | Lucide React 0.445 | Tree-shakable icon set |
+| **Storage** | localStorage | Browser-based persistence |
+| **Build** | Vite 7.3 | Dev server and bundler |
+| **Deployment** | Vercel | Production hosting |
+
+---
+
+## 📁 Project Structure
 
 ```
-paste/
-│
-├── node_modules/
+paste-manager-react/
 ├── public/
+│   └── vite.svg
 ├── src/
-│   ├── assets/
 │   ├── components/
-│   ├── pages/
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-│
-├── .eslintrc.js
+│   │   ├── Home.jsx            # Create / Edit paste form
+│   │   ├── Navbar.jsx          # Navigation bar with branding
+│   │   ├── Paste.jsx           # Paste listing, search, and actions
+│   │   └── ViewPaste.jsx       # Read-only paste viewer
+│   ├── data/
+│   │   └── Navbar.js           # Navigation link definitions
+│   ├── redux/
+│   │   ├── pasteSlice.js       # Redux slice (actions + reducers)
+│   │   └── store.js            # Redux store configuration
+│   ├── utlis/
+│   │   └── formatDate.js       # Date formatting utility
+│   ├── App.jsx                 # Route definitions
+│   ├── index.css               # Tailwind directives
+│   └── main.jsx                # Entry point (Provider + Toaster)
+├── index.html
+├── package.json
 ├── tailwind.config.js
 ├── postcss.config.js
 ├── vite.config.js
-└── package.json
+├── vercel.json                 # SPA rewrite rules for Vercel
+└── eslint.config.js
 ```
 
 ---
 
-## Tailwind CSS Configuration
+## ⚡ Getting Started
 
-The `tailwind.config.js` file is configured to scan all the files in the `src` directory for Tailwind CSS classes and allows you to customize the theme and plugins.
+```bash
+# Clone the repository
+git clone https://github.com/harshpreet284/paste-manager-react.git
 
-```js
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}',
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
+# Navigate to the project
+cd paste-manager-react
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+
+# Build for production
+npm run build
 ```
 
----
-
-## Conclusion
-
-This template sets up a React project with Vite, ESLint, Tailwind CSS, and Redux Toolkit for state management. With this setup, you can quickly start building modern, scalable web applications. Feel free to customize it further according to your project requirements!
+The app will be available at `http://localhost:5173`.
 
 ---
+
+## 🔄 How It Works
+
+1. Open the app → land on the **Home** page with the paste editor
+2. Enter a **title** and **content**, then click **"Create My Paste"**
+3. The paste is saved to **Redux** and synced to **localStorage**
+4. Navigate to the **Paste** page to view all saved snippets
+5. **Search** pastes by title using the search bar
+6. Use action buttons to **edit** ✏️, **delete** 🗑️, **view** 👁️, or **copy** 📋 any paste
+7. Editing redirects back to Home with pre-filled fields and an **"Update Paste"** button
+8. Viewing opens the paste in a **new tab** as a read-only page
+9. All changes persist across browser sessions automatically
+
+---
+
+## 🔮 Future Improvements
+
+- ☁️ **Cloud Sync** — Backend integration for cross-device access
+- 🔐 **Authentication** — User accounts for personal paste libraries
+- 📝 **Rich Text / Markdown** — Syntax highlighting and formatted content
+- 🏷️ **Tags & Categories** — Organize pastes with labels and folders
+- ⭐ **Favorites** — Pin frequently used snippets
+- 📥 **Import / Export** — Download pastes as JSON or bulk import
+- 📱 **PWA Support** — Offline access and installability
+- 🎨 **Dark Mode** — Theme toggle for comfortable viewing
+
+---
+
+## 👤 Author
+
+| | |
+|---|---|
+| **Name** | Harshpreet Singh |
+| **GitHub** | [@harshpreet284](https://github.com/harshpreet284) |
+| **LinkedIn** |(https://www.linkedin.com/in/harshpreet-singh-2909a8294/) |
+
+---
+
+<div align="center">
+
+⭐ **If you found this useful, consider giving it a star!**
+
+</div>

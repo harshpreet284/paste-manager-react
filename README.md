@@ -114,7 +114,7 @@ paste-manager-react/
 
 ```bash
 # Clone the repository
-git clone https://github.com/harshpreet284/paste-manager-react.git
+git clone https://github.com/harshpreet284/SnippetVault
 
 # Navigate to the project
 cd paste-manager-react

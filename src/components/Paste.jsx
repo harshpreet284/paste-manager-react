@@ -46,9 +46,9 @@ const Paste = () => {
                   className="border border-[rgba(128,121,121,0.3)] w-full gap-y-6 justify-between flex flex-col sm:flex-row p-4 rounded-[0.3rem]"
                 >
                   {/* heading and Description */}
-                  <div className="w-[50%] flex flex-col space-y-3">
-                    <p className="text-4xl font-semibold ">{paste?.title}</p>
-                    <p className="text-sm font-normal line-clamp-3 max-w-[80%] text-[#707070]">
+                  <div className="w-full sm:w-[50%] flex flex-col space-y-3">
+                    <p className="text-4xl font-semibold break-words">{paste?.title}</p>
+                    <p className="text-sm font-normal line-clamp-3 max-w-full sm:max-w-[80%] text-[#707070]">
                       {paste?.content}
                     </p>
                   </div>

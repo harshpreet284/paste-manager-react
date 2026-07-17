@@ -58,30 +58,29 @@ const Home = () => {
   return (
     <div className="w-full h-full py-10 max-w-[1200px] mx-auto px-5 lg:px-0">
       <div className="flex flex-col gap-y-5 items-start">
-        <div className="w-full flex flex-row gap-x-4 justify-between items-center">
+        <div className="w-full flex flex-col sm:flex-row gap-y-3 sm:gap-x-4 justify-between items-start sm:items-center">
           <input
             type="text"
             placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            // Dynamic width based on whether pasteId is present
-            className={`${
-              pasteId ? "w-[80%]" : "w-[85%]"
-            } text-black border border-input rounded-md p-2`}
+            className="w-full text-black border border-input rounded-md p-2"
           />
-          <button
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700"
-            onClick={createPaste}
-          >
-            {pasteId ? "Update Paste" : "Create My Paste"}
-          </button>
+          <div className="flex flex-row gap-x-2 w-full sm:w-auto">
+            <button
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 whitespace-nowrap w-full sm:w-auto"
+              onClick={createPaste}
+            >
+              {pasteId ? "Update Paste" : "Create My Paste"}
+            </button>
 
-        {pasteId &&  <button
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700"
-            onClick={resetPaste}
-          >
-            <PlusCircle size={20} />
-          </button>}
+            {pasteId &&  <button
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 flex justify-center items-center shrink-0"
+              onClick={resetPaste}
+            >
+              <PlusCircle size={20} />
+            </button>}
+          </div>
         </div>
 
         <div
